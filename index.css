@@ -1,0 +1,477 @@
+/*
+=====================================
+    0. TEMEL STİL, SIFIRLAMA VE FONT
+=====================================
+*/
+:root {
+    /* Renk Paleti */
+    --primary-color: #f99000; /* Turuncu (Vurgu) */
+    --secondary-color: #ba181b; /* Kırmızı (Banner) */
+    --text-dark: #333333;
+    --text-light: #f5f5f5;
+    --footer-bg: #1e1e1e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 ;
+    padding: 0 ;
+}
+.container{
+  max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--text-light);
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Sayfa içeriğini ortalamak için merkezi kapsayıcı */
+
+
+/*
+=====================================
+    1. BANNER BÖLÜMÜ (.banner1)
+=====================================
+*/
+.banner1 {
+    position: relative;
+    text-align: center;
+    color: white;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    
+    background-color: var(--secondary-color); 
+}
+
+.banner {
+    width: 100vw;
+    min-height: 100vh;
+    clear: both;
+    
+    object-fit: cover;
+    position: absolute;
+    
+    
+    bottom: 0; 
+    
+    
+    left: 0;
+    z-index: 1; 
+    opacity: 1;
+}
+
+.logo {
+    position: relative; 
+    z-index: 2;
+    width: 600px;
+    margin-bottom: 25px;
+}
+
+.banner1 p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 15px;
+    color: yellow;
+}
+
+.banner1 h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 4rem;
+    font-weight: 800; 
+    margin: 5px 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.btn {
+    position: relative;
+    z-index: 2;
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 12px 40px;
+    margin-top: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e88d33;
+}
+
+/*
+=====================================
+    2. MENÜ NAVİGASYONU (.menu ve .mn)
+=====================================
+*/
+.menu, .mn {
+    padding: 10px 0;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+.menu nav, .mn nav {
+    display: flex; 
+    justify-content: space-around; 
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu a, .mn a {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: flex; 
+    align-items: center;
+    flex-direction: column; 
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu a:hover, .mn a:hover {
+    color: var(--primary-color);
+}
+
+/* İKONLARIN BOYUTLANDIRILMASI (Görünürlük Sorununun Çözümü!) */
+.menu-icon {
+    width: 40px;  
+    height: 40px;
+    margin-bottom: 8px; 
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/*
+=====================================
+    3. PROMOSYON KARTLARI (lezzetus-container)
+    (BUTON RESMİN ÜZERİNDE)
+=====================================
+*/
+.lezzetus-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 5px; 
+    flex-wrap: wrap;
+    padding: 0 20px;
+    
+    margin: 0 auto 30px;
+}
+
+/* Kartın referans noktası ve genel stili */
+.card-wrapper {
+    position: relative; 
+    flex: 1 1 30%; 
+    max-width: 600px;
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.lezzetus-container img {
+    width: 100%; 
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 1s;
+}
+
+.card-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* Promosyon Metni */
+.card-metin {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 5;
+    color: white; /* Resimlerin üzerine okunaklı olması için */
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+
+/* Sipariş Butonunun Konumlandırılması */
+.lzt {
+    position: absolute; 
+    z-index: 10; 
+    bottom: 20px;
+    left: 25%; 
+    transform: translateX(-50%); 
+
+    background-color: white;
+    color: red;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.lzt:hover {
+    background-color: #e88d33;
+}
+
+/*
+=====================================
+    4. ÜRÜN LİSTESİ (.a)
+=====================================
+*/
+.a {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 10px;
+    flex-wrap: wrap;
+}
+
+.a a {
+    display: block; 
+    text-decoration: none;
+    color: var(--text-dark);
+    text-align: left;
+    width: 30%; 
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.a a:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.a img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; 
+    
+    margin-bottom: 10px;
+}
+
+.a p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.a .rating {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+/*
+=====================================
+    5. FOOTER (ALT BİLGİ)
+=====================================
+*/
+footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: 40px 0 20px;
+    font-size: 1rem;
+}
+
+.footer-ana-icerik {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Sütunları üste hizala */
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Sütunları */
+.footer-sol, .footer-nav, .insta-galeri {
+    flex: 1 1 30%; /* Üç sütunun yaklaşık eşit olması */
+    padding: 0 15px;
+    min-width: 250px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* İletişim Listesi */
+.iletisim-listesi {
+    list-style: none;
+}
+
+.iletisim-listesi li {
+    margin-bottom: 10px;
+}
+
+.iletisim-listesi a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.iletisim-listesi a:hover {
+    color: var(--primary-color);
+}
+
+/* Footer İkon Boyutları */
+.footer-icon {
+    width: 20px; 
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    filter: invert(1); /* PNG ikonların koyu renkli ise beyaz görünmesi için */
+}
+
+/* Footer Link Menüsü */
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Instagram Galeri */
+.insta-galeri h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.insta-resimler {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.insta-resimler img {
+    width: calc(33.33% - 5px); /* Her satırda 3 resim için */
+    height: auto;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+/* Telif Hakkı Bölümü */
+.copyright-bolumu {
+    text-align: center;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.rating-info {
+    display: flex;
+    justify-content: space-between; /* Öğeler arasındaki boşluğu en üst düzeye çıkarır */
+    align-items: center;
+    width: 100%; /* Kapsayıcının tam genişliğini kullanmasını sağlar */
+    margin-top: 10px; /* Üstteki içerikten ayırır */
+}
+
+/* Tek tek öğe stilleri */
+.rating-info p {
+    margin: 0; /* Paragrafın varsayılan dış boşluklarını sıfırlar */
+    padding: 0 5px; /* Yanlara hafif dolgu */
+    flex-grow: 1; /* Tüm öğelerin esnek büyümesini sağlar */
+    text-align: center; /* Varsayılan olarak metni ortalar (aşağıdaki özel kurallar ile değişecek) */
+}
+
+/* 1. Rating (Solda) */
+.rating-info .rating {
+    text-align: left; 
+    flex-grow: 0; 
+    font-weight: normal;
+    color: black; 
+}
+
+/* 2. Comments (Ortada) */
+.rating-info .comments {
+    text-align: center; /* Ortaya hizala */
+    flex-grow: 0; /* Büyümesini kısıtla */
+    color: black; /* Hafif gri renk */
+}
+
+/* 3. Fiyat (Sağda) */
+.rating-info .fiyat {
+    text-align: right; /* Sağ kenara yasla */
+    flex-grow: 0; /* Büyümesini kısıtla */
+    font-weight: bold;
+    font-size: 1.1em;
+    color: black; /* Varsayılan metin rengi */
+}
+
+/*
+=====================================
+    6. MEDYA SORGULARI (RESPONSIVE)
+=====================================
+*/
+
+/* Tabletler için */
+@media (max-width: 992px) {
+    .footer-sol, .footer-nav, .insta-galeri {
+        flex: 1 1 100%; /* Sütunları alt alta diz */
+        margin-bottom: 30px;
+    }
+    .footer-ana-icerik {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .insta-galeri {
+        text-align: left;
+    }
+}
+
+/* Mobil cihazlar için */
+@media (max-width: 576px) {
+    .banner1 h1 {
+        font-size: 2rem;
+    }
+    
+    .menu nav, .mn nav {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .card-wrapper {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    .a a {
+        width: 100%;
+    }
+}

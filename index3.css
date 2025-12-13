@@ -27,9 +27,9 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 h1 {
@@ -37,12 +37,7 @@ h1 {
   line-height: 1.1;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+
 
 .logo {
   height: 6em;
@@ -95,8 +90,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-.menu {
-    width: 100%; /* Sayfanın tamamını kaplasın */
-    clear: both; /* Varsa, solundaki/sağındaki kayan öğeleri temizle */
 }
