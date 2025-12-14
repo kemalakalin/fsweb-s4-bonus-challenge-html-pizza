@@ -173,35 +173,28 @@ body {
 .lezzetus-container {
     display: flex; 
     justify-content: center; /* Öğeleri yatayda ortalar */
-    gap: 5px; /* Öğeler arasında 5px boşluk bırakır */
+     /* Öğeler arasında 5px boşluk bırakır */
     flex-wrap: wrap; /* Öğelerin alt satıra geçmesine izin verir (Responsive için gerekli) */
-    
-    /* Düzeltme: max-width: 150vw; kuralı kaldırıldı. */
-    max-width: 100%;
-    margin: 0 auto; /* Kapsayıcının ekran genişliğini aşmamasını garanti eder */
-    padding: 0 20px; /* Kenarlara hafif boşluk ekler (kapsayıcı içindeki öğeler için) */
-    align-items: flex-start;
-    margin-left: 100px;
-    margin-bottom: 20px;
+    max-width: 100vw;
+    margin-bottom: 30px;
 }
 
 /* Kartın referans noktası ve genel stili */
 .card-wrapper {
     position: relative; 
-    flex: 1 1 30%; 
+    
     max-width: 600px;
-    border-radius: 10px;
     overflow: hidden; 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    
     background-color: white;
 }
 
 .lezzetus-container img {
     width: 100%; 
     height: auto;
-    display: block;
+    display: flex;
+    justify-content: center;
     border-radius: 10px;
-    transition: transform 1s;
 }
 
 .card-wrapper:hover img {
