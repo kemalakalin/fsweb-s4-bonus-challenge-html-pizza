@@ -20,14 +20,14 @@
 .container {
     max-width: 1200px; /* 1. Maksimum Genişlik Tanımla */
     margin: 0 auto;    /* 2. Yatayda Otomatik Ortala */
-    padding: 0 15px;   /* 3. Mobil Cihazlar İçin Kenar Dolgusu Ekle */
+    padding: 0 20px;   /* 3. Mobil Cihazlar İçin Kenar Dolgusu Ekle */
 }
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--text-light);
-    line-height: 1.5;
+    line-height: 2,0;
     color: var(--text-dark);
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 /* Sayfa içeriğini ortalamak için merkezi kapsayıcı */
@@ -176,31 +176,41 @@ body {
 .lezzetus-container {
     display: flex; 
     justify-content: center;
-    flex-wrap: wrap; 
-    max-width: 100vw;
+    
+    align-items: flex-start;
     margin-bottom: 30px;
-    gap: 5px;
-    margin-left: 50px;
+    gap: 15px;
+    padding: 0 10px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Kartın referans noktası ve genel stili */
 .card-wrapper {
-    position: relative; 
-    
+    position: relative;
+    flex: 1 1 100%;
     max-width: 600px;
-    overflow: hidden; 
-    
+    overflow: hidden;
     background-color: white;
 }
 
+.buyuk-kart {
+    flex: 1 1 100%;
+    min-width: 300px;
+}
+
 .lezzetus-container img {
-    width: 100%; 
+    max-width: 600px;
     height: auto;
     display: flex;
     justify-content: center;
     border-radius: 10px;
+    gap: 100px;
 }
-
+img.brgr {
+    margin-bottom: 20px;
+}
 .card-wrapper:hover img {
     transform: scale(1.05);
 }
@@ -213,17 +223,12 @@ body {
     z-index: 5;
     color: white; /* Resimlerin üzerine okunaklı olması için */
     font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    font-size: 1.5rem;
-    text-align: left;
-}
-.sag-kart-grup{
-    flex-basis: 100%;
+    flex: 1 1 auto;
     max-width: 35%;
+    min-width: 250px;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    flex: 1;
 }
 .kucuk-kart{
     flex: 1;    
@@ -460,180 +465,194 @@ footer {
 =====================================
 */
 
-/*
-=====================================
-    6. MEDYA SORGULARI (RESPONSIVE)
-=====================================
-*/
-
-/* ----------------------------------- */
 /* 💻 Tabletler (max-width: 992px) */
-/* ----------------------------------- */
 @media (max-width: 992px) {
-    /* Temel Kapsayıcı ve Genel Ayarlar */
-    .container {
-        padding: 0 10px; /* Kenar boşluklarını daralt */
-    }
+  /* Genel Ayarlar */
+  .container {
+    padding: 0 10px;
+  }
 
-    /* 1. Banner Bölümü */
-    .banner1 h1 {
-        font-size: 3rem; /* Başlığı küçült */
-    }
+  /* Banner Ayarları */
+  .banner1 h1 {
+    font-size: 3rem;
+  }
+  .logo {
+    width: 450px;
+    margin-top: 80px;
+  }
 
-    .logo {
-        width: 450px; /* Logoyu küçült */
-        margin-top: 80px;
-    }
+  /* Menü Ayarları */
+  .menu nav,
+  .mn nav {
+    flex-wrap: wrap;
+  }
+  .menu a,
+  .mn a {
+    font-size: 1.2rem;
+    padding: 8px;
+    /* Flex öğelerinin eşit yayılması için */
+    flex: 1 1 20%; 
+  }
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+  }
 
-    /* 2. Menü Navigasyonu */
-    .menu nav, .mn nav {
-        justify-content: space-between; /* Yatayda sıkı hizalama */
-        flex-wrap: wrap; /* Gerekirse alt satıra geç */
-    }
-    
-    .menu a, .mn a {
-        font-size: 1.2rem; /* Menü yazısını küçült */
-        padding: 8px;
-    }
-    
-    .menu-icon {
-        width: 30px;
-        height: 30px;
-    }
+  /* Promosyon Kartları (lezzetus-container) */
+  .lezzetus-container {
+    gap: 20px;
+    padding: 0 15px;
+    flex-direction: row;
+    margin: 0 auto 30px auto;
+  }
 
-    /* 3. Promosyon Kartları (Flex yapısı değişimi) */
-    .lezzetus-container {
-        gap: 15px; /* Kartlar arası boşluğu azalt */
-    }
+  .buyuk-kart {
+    flex: 1 1 45%;
+    max-width: 500px;
+  }
 
-    /* Büyük kart ve tüm kart kapsayıcıları tam genişliğe çıkar */
-    .card-wrapper {
-        flex: 1 1 100%; 
-        max-width: 100%;
-        margin-bottom: 10px;
-    }
-    
-    /* Küçük kart grubunu yatay (row) yap */
-    .sag-kart-grup {
-        max-width: 100%;
-        flex-direction: row; /* Küçük kartları yan yana diz */
-        gap: 15px;
-    }
+  .card-wrapper {
+    flex: 1 1 auto;
+    max-width: none;
+  }
 
-    /* Küçük kartları iki sütuna sığdır */
-    .kucuk-kart {
-        flex: 1 1 48%; 
-    }
-    
-    /* 4. Ürün Listesi (İki Sütun Düzeni) */
-    .a a {
-        width: calc(50% - 7.5px); /* İki sütuna düşürürken boşlukları hesaba kat */
-        margin-bottom: 15px;
-    }
-    
-    /* 5. Footer (Alt Bilgi - İki Sütun Düzeni) */
-    .footer-sol, 
-    .footer-nav, 
-    .insta-galeri {
-        flex: 1 1 50%; /* Üç sütunu iki sütuna böl */
-        min-width: 200px;
-        margin-bottom: 25px;
-    }
+  .sag-kart-grup {
+    flex: 1 1 45%;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 250px;
+    max-width: 500px;
+  }
+
+  .kucuk-kart {
+    /* İki kartın yan yana sığması için */
+    flex: 1 1 48%; 
+  }
+
+  /* Ürün Listesi (.a) */
+  .a a {
+    /* İki ürün yan yana sığması için */
+    width: calc(50% - 25px); 
+    margin-bottom: 25px;
+  }
+
+  /* Footer */
+  .footer-sol,
+  .footer-nav,
+  .insta-galeri {
+    /* İki sütun düzeni için */
+    flex: 1 1 50%;
+    min-width: 200px;
+    margin-bottom: 25px;
+  }
 }
 
-
-/* ----------------------------------- */
 /* 📱 Mobil Cihazlar (max-width: 576px) */
-/* ----------------------------------- */
 @media (max-width: 576px) {
-    
-    /* 1. Banner Bölümü */
-    .banner1 h1 {
-        font-size: 2.2rem; /* Başlığı daha da küçült */
-    }
-    
-    .banner1 p {
-        font-size: 1.2rem;
-    }
+  
+  /* Genel Ayarlar */
+  .container {
+    padding: 0 10px;
+  }
 
-    .logo {
-        width: 90%; /* Logoyu daralt */
-        margin-top: 50px;
-    }
-    
-    .btn {
-        padding: 10px 30px;
-        font-size: 1rem;
-        margin-top: 20px;
-    }
+  /* Banner Ayarları */
+  .banner1 h1 {
+    font-size: 2.2rem;
+  }
+  .banner1 p {
+    font-size: 1.2rem;
+  }
+  .logo {
+    width: 90%;
+    margin-top: 50px;
+  }
+  .btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
 
-    /* 2. Menü Navigasyonu */
-    .menu nav, .mn nav {
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 10px; 
-    }
-    
-    .menu a, .mn a {
-        font-size: 1rem;
-        padding: 5px;
-        flex: 1 1 auto; /* Esnekliği koru */
-    }
-    
-    /* 3. Promosyon Kartları (Tek Sütun Düzeni) */
-    .lezzetus-container {
-        gap: 10px;
-        justify-content: center;
-    }
-    
-    /* Tüm kartları tam genişliğe çıkar */
-    .card-wrapper, .kucuk-kart {
-        flex: 1 1 100%;
-        gap: 10px;
-    }
-    
-    /* Küçük kart grubunu dikey (column) yap */
-    .sag-kart-grup {
-        flex-direction: column; 
-        gap: 10px;
-    }
+  /* Menü Ayarları */
+  .menu nav,
+  .mn nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .menu a,
+  .mn a {
+    font-size: 1rem;
+    padding: 5px;
+    flex: 1 1 auto;
+    text-align: center;
+  }
 
-    /* 4. Ürün Listesi (Tek Sütun Düzeni) */
-    .a a {
-        width: 100%; /* Tüm kartları tek sütun yap */
-    }
-    
-    /* 5. Footer (Alt Bilgi - Tek Sütun Düzeni) */
-    .footer-ana-icerik {
-        flex-direction: column; /* Tüm sütunları alt alta diz */
-        align-items: center;
-    }
-    
-    .footer-sol, 
-    .footer-nav, 
-    .insta-galeri {
-        flex: 1 1 100%; /* Tam genişliği kapla */
-        padding: 0 20px;
-        margin-bottom: 20px;
-        text-align: center; /* Genelde ortalanır */
-    }
-    
-    /* Metin hizalamasını okunaklılık için tekrar sola çekme */
-    .iletisim-listesi, .footer-nav ul {
-        text-align: left;
-    }
-    
-    /* İletişim listesi bağlantılarını ortalama */
-    .iletisim-listesi a {
-        justify-content: center;
-    }
-    
-    /* Insta galeri resimlerini ortala */
-    .insta-resimler {
-        justify-content: center; 
-    }
-    
-    .insta-resimler img {
-        width: calc(33.33% - 5px); /* Hala 3 resim yan yana kalabilir */
-    }
+  /* Promosyon Kartları (lezzetus-container) */
+  .lezzetus-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+    margin: 0 auto 20px auto;
+  }
+
+  .lezzetus-container img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .buyuk-kart {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .card-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .sag-kart-grup {
+    flex: 1 1 100%;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .kucuk-kart {
+    /* Küçük kartlar tam genişlikte */
+    flex: 1 1 100%; 
+    width: 100%;
+  }
+  
+  /* Ürün Listesi (.a) */
+  .a a {
+    /* Ürünler tek sütun halinde */
+    width: 100%;
+  }
+  
+  /* Footer */
+  .footer-ana-icerik {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-sol,
+  .footer-nav,
+  .insta-galeri {
+    flex: 1 1 100%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .iletisim-listesi a {
+    justify-content: center;
+  }
+
+  .insta-resimler {
+    justify-content: center;
+  }
 }
