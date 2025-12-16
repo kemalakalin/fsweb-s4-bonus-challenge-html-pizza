@@ -47,6 +47,11 @@ h4{
   font-family:"barlow";
   color:#1e1e1e;
 }
+h5{
+  font-size:3rem;
+  font-family:"barlow";
+  color:#1e1e1e;  
+}
 /* Sayfa içeriğini ortalamak için merkezi kapsayıcı */
 
 
@@ -116,6 +121,12 @@ p#app{
   font-family:"satisfy", cursive;
   font-weight: 400;
   }
+  p#app2{
+    font-family:"satisfy", cursive;
+    font-weight: 400;
+    font-size:2rem;
+    color:red
+    }
 .btn {
     position: relative;
     z-index: 2;
@@ -174,7 +185,7 @@ p#app{
 
 /* İKONLARIN BOYUTLANDIRILMASI (Görünürlük Sorununun Çözümü!) */
 .menu-icon {
-  padding: 1px;
+  
     width: 40px;  
     height: 40px;
     
@@ -308,11 +319,18 @@ img.brgr {
     background-color: #e88d33;
 }
 
-/*
-=====================================
-    4. ÜRÜN LİSTESİ (.a)
-=====================================
-*/
+.banner2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    background-color: #f8f8f8;
+    
+
+
+}
 .a {
     display: flex;
     justify-content: space-around;
@@ -418,11 +436,10 @@ footer {
 
 /* Footer İkon Boyutları */
 .footer-icon {
-    width: 20px; 
-    height: 20px;
+    width: 30px; 
+    height: 30px;
     margin-right: 10px;
     vertical-align: middle;
-    filter: invert(1); /* PNG ikonların koyu renkli ise beyaz görünmesi için */
 }
 
 /* Footer Link Menüsü */
@@ -434,8 +451,9 @@ footer {
 .footer-nav a {
     color: white;
     text-decoration: none;
-    padding: 5px 0;
+    padding: 10px 0;
     transition: color 0.3s;
+    font-size: 1.1rem;
 }
 
 .footer-nav a:hover {
@@ -458,13 +476,16 @@ footer {
     width: calc(33.33% - 5px); /* Her satırda 3 resim için */
     height: auto;
     object-fit: cover;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 /* Telif Hakkı Bölümü */
 .copyright-bolumu {
-    text-align: center;
+    text-align: left;
     padding-top: 20px;
+   max-width: 1200px;
+    margin: 0 auto;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.6);
 }
 .rating-info {
@@ -513,194 +534,221 @@ footer {
 =====================================
 */
 
-/* 💻 Tabletler (max-width: 992px) */
+/* -----------------------------------
+   TABLET ve DAHA KÜÇÜK (≤992px)
+----------------------------------- */
 @media (max-width: 992px) {
-  /* Genel Ayarlar */
-  .container {
-    padding: 0 10px;
-  }
 
-  /* Banner Ayarları */
-  .banner1 h1 {
-    font-size: 3rem;
-  }
-  .logo {
-    width: 450px;
-    margin-top: 80px;
-  }
+    /* Genel Tipografi */
+    h2 {
+        font-size: 2.8rem;
+    }
+    h5 {
+        font-size: 2.2rem;
+    }
 
-  /* Menü Ayarları */
-  .menu nav,
-  .mn nav {
-    flex-wrap: wrap;
-  }
-  .menu a,
-  .mn a {
-    font-size: 1.2rem;
-    padding: 8px;
-    /* Flex öğelerinin eşit yayılması için */
-    flex: 1 1 20%; 
-  }
-  .menu-icon {
-    width: 30px;
-    height: 30px;
-  }
+    /* .container iç boşluk */
+    .container {
+        padding: 0 15px;
+    }
 
-  /* Promosyon Kartları (lezzetus-container) */
-  .lezzetus-container {
-    gap: 20px;
-    padding: 0 15px;
-    flex-direction: row;
-    margin: 0 auto 30px auto;
-  }
+    /* Banner */
+    .banner1 h1 {
+        font-size: 3.2rem;
+    }
+    .banner1 p {
+        font-size: 1.2rem;
+    }
+    .logo {
+        width: 60%;
+        max-width: 350px;
+        margin-top: 60px;
+    }
 
-  .buyuk-kart {
-    flex: 1 1 45%;
-    max-width: 500px;
-  }
+    /* Menü */
+    .menu nav,
+    .mn nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 10px;
+    }
+    .menu a,
+    .mn a {
+        font-size: 1.1rem;
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 8px 0;
+    }
 
-  .card-wrapper {
-    flex: 1 1 auto;
-    max-width: none;
-  }
+    /* Promosyon Kartları */
+    .lezzetus-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .buyuk-kart,
+    .sag-kart-grup {
+        width: 100%;
+        max-width: 700px;
+    }
+    .sag-kart-grup {
+        flex-direction: row;
+        gap: 15px;
+        justify-content: space-between;
+    }
+    .kucuk-kart {
+        flex: 1 1 calc(50% - 10px);
+    }
+    .lezzetus-container img {
+        width: 100%;
+        height: auto;
+    }
 
-  .sag-kart-grup {
-    flex: 1 1 45%;
-    flex-direction: column;
-    gap: 15px;
-    min-width: 250px;
-    max-width: 500px;
-  }
+    /* Ürün Listesi (.a) */
+    .a {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    .a a {
+        width: calc(50% - 10px);
+        margin-bottom: 25px;
+    }
 
-  .kucuk-kart {
-    /* İki kartın yan yana sığması için */
-    flex: 1 1 48%; 
-  }
-
-  /* Ürün Listesi (.a) */
-  .a a {
-    /* İki ürün yan yana sığması için */
-    width: calc(50% - 25px); 
-    margin-bottom: 25px;
-  }
-
-  /* Footer */
-  .footer-sol,
-  .footer-nav,
-  .insta-galeri {
-    /* İki sütun düzeni için */
-    flex: 1 1 50%;
-    min-width: 200px;
-    margin-bottom: 25px;
-  }
+    /* Footer */
+    .footer-ana-icerik {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .footer-sol,
+    .footer-nav,
+    .insta-galeri {
+        width: calc(50% - 10px);
+        min-width: 280px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
 }
 
-/* 📱 Mobil Cihazlar (max-width: 576px) */
+/* -----------------------------------
+   MOBIL (≤576px)
+----------------------------------- */
 @media (max-width: 576px) {
-  
-  /* Genel Ayarlar */
-  .container {
-    padding: 0 10px;
-  }
 
-  /* Banner Ayarları */
-  .banner1 h1 {
-    font-size: 2.2rem;
-  }
-  .banner1 p {
-    font-size: 1.2rem;
-  }
-  .logo {
-    width: 90%;
-    margin-top: 50px;
-  }
-  .btn {
-    padding: 10px 30px;
-    font-size: 1rem;
-    margin-top: 20px;
-  }
+    /* Genel Tipografi */
+    h2 {
+        font-size: 1rem;
+    }
+     h3 {
+        font-size: 1rem;
+    }
+      h4 {
+        font-size: 1rem;
+    }
+    h5 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
 
-  /* Menü Ayarları */
-  .menu nav,
-  .mn nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-  .menu a,
-  .mn a {
-    font-size: 1rem;
-    padding: 5px;
-    flex: 1 1 auto;
-    text-align: center;
-  }
+    /* Banner */
+    .banner1 h1 {
+        font-size: 2rem;
+    }
+    .banner1 p {
+        font-size: 1rem;
+    }
+    .logo {
+        width: 80%;
+        margin-top: 40px;
+    }
 
-  /* Promosyon Kartları (lezzetus-container) */
-  .lezzetus-container {
-    flex-direction: column;
-    gap: 15px;
-    padding: 0 10px;
-    margin: 0 auto 20px auto;
-  }
+    /* Buton (CTA) */
+    .btn {
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
 
-  .lezzetus-container img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+    /* Menü */
+    .menu nav,
+    .mn nav {
+      display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .menu a,
+    .mn a {
+        font-size: 1rem;
+        width: 33%;
+    }
+button.lzt{
+    padding: 5px 20px;
+    font-size: 0.9rem;
+}
+    /* Promosyon Kartları (tam genişlik) */
+    .lezzetus-container,
+    .sag-kart-grup {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    .buyuk-kart,
+    .kucuk-kart {
+        width: 100%;
+        max-width: 100%;
+    }
 
-  .buyuk-kart {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+    /* Ürün Listesi (.a) */
+    .a {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .a a {
+        width: 100%;
+        margin-bottom: 15px;
+    }
 
-  .card-wrapper {
-    flex: 1 1 100%;
-    max-width: 100%;
-    width: 100%;
-  }
-  
-  .sag-kart-grup {
-    flex: 1 1 100%;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 100%;
-  }
+    /* Ürün rating-info */
+    .rating-info {
+        
+        align-items: center;
+        gap: 8px;
+    }
+    .rating-info p {
+      display:flex;
+      justify-content:center;
+        text-align: center;
 
-  .kucuk-kart {
-    /* Küçük kartlar tam genişlikte */
-    flex: 1 1 100%; 
-    width: 100%;
-  }
-  
-  /* Ürün Listesi (.a) */
-  .a a {
-    /* Ürünler tek sütun halinde */
-    width: 100%;
-  }
-  
-  /* Footer */
-  .footer-ana-icerik {
-    flex-direction: column;
-    align-items: center;
-  }
+        
+        padding: 0;
+    }
 
-  .footer-sol,
-  .footer-nav,
-  .insta-galeri {
-    flex: 1 1 100%;
-    padding: 0 20px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .iletisim-listesi a {
-    justify-content: center;
-  }
+    /* Footer */
+    .footer-ana-icerik {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-sol,
+    .footer-nav,
+    .insta-galeri {
+        width: 100%;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
 
-  .insta-resimler {
-    justify-content: center;
-  }
+    .iletisim-listesi a {
+        justify-content: center;
+    }
+    .insta-resimler {
+        justify-content: center;
+    }
 }
