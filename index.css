@@ -110,8 +110,7 @@ h5{
 
 .banner1 h1 {
     position: relative;
-    font-family: "barlow condensed";
-    
+    font-family: "roboto condensed";    
     z-index: 2;
     font-size: 5rem;
     font-weight: 200;
@@ -150,7 +149,7 @@ p#app{
 =====================================
 */
 .menu, .mn {
-    padding: 10px 0;
+    padding: 20px 0;
     background-color: white;
     gap: 10px;
     margin-bottom: 30px;
@@ -161,7 +160,7 @@ p#app{
     justify-content:space-between; 
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 20px;
     gap: 25px;
     
     
@@ -170,17 +169,20 @@ p#app{
 
 .menu a, .mn a {
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--text-dark);
     text-align: left;
-    padding: 10px;
     font-size: 1.5rem;
     font-weight: 400;
-    margin: 5px;
     
 }
 
 .menu a:hover, .mn a:hover {
-    color: var(--primary-color);
+    background-color: var(--text-dark);
+    border-radius: 10px;
+    color: white;
 }
 
 /* İKONLARIN BOYUTLANDIRILMASI (Görünürlük Sorununun Çözümü!) */
@@ -554,7 +556,8 @@ footer {
 
     /* Banner */
     .banner1 h1 {
-        font-size: 3.2rem;
+        font-size: 5rem;
+        font-family: "roboto condensed";
     }
     .banner1 p {
         font-size: 1.2rem;
@@ -641,24 +644,25 @@ footer {
 
     /* Genel Tipografi */
     h2 {
-        font-size: 1rem;
+        font-size: 2rem;
     }
      h3 {
-        font-size: 1rem;
+        font-size: 2rem;
     }
       h4 {
-        font-size: 1rem;
+        font-size: 2rem;
     }
     h5 {
         font-size: 1.8rem;
     }
     p {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     /* Banner */
     .banner1 h1 {
-        font-size: 2rem;
+        font-size: 5rem;
+        font-family: "roboto condensed";
     }
     .banner1 p {
         font-size: 1rem;
@@ -685,7 +689,7 @@ footer {
     }
     .menu a,
     .mn a {
-        font-size: 1rem;
+        font-size: 2rem;
         width: 33%;
     }
 button.lzt{
