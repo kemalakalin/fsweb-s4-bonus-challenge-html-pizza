@@ -22,13 +22,7 @@
     margin: 0 auto;    /* 2. Yatayda Otomatik Ortala */
     padding: 0 20px;   /* 3. Mobil Cihazlar İçin Kenar Dolgusu Ekle */
 }
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--text-light);
-    line-height: 2,0;
-    color: var(--text-dark);
-    overflow-x: hidden !important;
-}
+
 h2{
   font-size:4rem;
   font-family: "quattrocento", serif;
@@ -199,7 +193,7 @@ nav-icon {
 section{
     display: flex; 
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 30px;
     gap: 15px;
     padding: 0 10px;
@@ -395,8 +389,7 @@ img.brgr {
 }
 
 .a img {
-    width: 100%;
-    height: 75%;
+   
     object-fit: cover; 
     
     margin-bottom: 10px;
@@ -572,19 +565,22 @@ footer {
 }
 @media (max-width: 576px) {
 
-    BODY{
-        background: white;
+   html, body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
     h2 {
         font-size: 2rem;
     }
 
     h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     h4 {
-        font-size: 2rem;
+        font-size: 1.2rem;
         margin:0;
         padding: 0;
     }
@@ -594,7 +590,7 @@ footer {
     }
 
     p {
-        font-size: 2rem;
+        font-size: 1rem;
     }
     /* HEADER */
     header{
@@ -637,12 +633,13 @@ footer {
         padding: 0;
     }   
 nav {
+    
     background-color: white;;
     display: flex;
    
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom:100px;
+    margin-bottom:120px;
     }
     nav a{
          font-size: 1rem;
@@ -651,10 +648,24 @@ nav {
         background-color: white;
     }
         
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+        max-width: 100%;
+        overflow-x: hidden; /* Yatay kaydırmayı engeller */
+        box-sizing: border-box; /* Padding ve border'ı genişliğe dahil eder */
+        padding: 0 15px;
 }
-section,
-    .sag-kart-grup {
-        background-color: white;
+section img{
+    max-width: 100%;
+        height: auto;
+}
+.lzt.sol-buyuk-btn {
+    top: 60%;
+}
+.sag-kart-grup {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -678,6 +689,13 @@ section,
     .a a {
         width: 100%;
         margin-bottom: 15px;
+        
+    }
+    .a img{
+        width: 100%;            /* Öğelerin kapsayıcıyı doldurmasını sağlar */
+    
+        display: flex;
+        justify-content: center;
     }
 
     /* Ürün rating-info */
@@ -695,54 +713,69 @@ section,
     }
 
     /* Footer */
-    .footer-ana-icerik {
+.footer-ana-icerik {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .footer-sol{
-    width: 100%;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* içerik sola */
-    text-align: flex-start;    /* metin sola */
-}
-  .footer-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    background-color: var(--footer-bg);
-    color: #fff;
-}
-
-.footer-nav a {
-    color: #fff;
-    display: block;
-}
-
-
-
-
-
-    .insta-galeri {
+        align-items: flex-start; /* Merkeze almayı iptal ettik, sola yasladık */
+        
+        text-align: left; /* Metinleri sola yasla */
         width: 100%;
         padding: 0 20px;
-        margin-bottom: 20px;
+        box-sizing: border-box;
+        background-color: var(--footer-bg);
     }
 
+    .footer-sol {
+        width: 100%;
+        padding: 0; /* Ana kapsayıcıda padding olduğu için sıfırlayabilirsin */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-nav a{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        background-color:var(--footer-bg);
+       
+    }
+    footer nav{
+        margin-bottom:20px;
+    }
+
+    /* Instagram Galerisi ve Resimler */
+ .insta-resimler {
+        display: flex;
+        flex-wrap: wrap; /* Sığmayanlar alt satıra geçsin */
+        justify-content: flex-start; /* Sola dayalı başlasın */
+        gap: 5px; /* Resimler arasındaki küçük boşluk */
+        width: 100%;
+    }
+
+    .insta-resimler img {
+        /* 3 resim + boşluklar için matematiksel hesap: */
+        /* (100% / 3) - boşluk payı */
+        
+        aspect-ratio: 1 / 1; /* Resimleri kare yapar (çok şık durur) */
+        object-fit: cover;   /* Resim yamulmadan kareye sığar */
+        border-radius: 4px;  /* Hafif yuvarlak köşeler (opsiyonel) */
+    }
+
+    /* İletişim Listesi Linkleri */
     .iletisim-listesi a {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start; /* İkon ve metni sola yasla */
+        text-align: left;
+        width: 100%;
     }
 
-    .insta-resimler {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
+    /* Genel kural: Tüm linklerin sola yaslandığından emin olalım */
+    .footer-nav a, .iletisim-listesi a {
+        display: block;
+        padding: 5px 0;
     }
+}
